@@ -93,6 +93,6 @@ public class GuessNumberTest {
         //when
         String result = guessNumber.guess(inputGuess);
         //then
-        assertEquals("1A1B",result);
+        assertEquals("0A1B",result);
     }
 }

@@ -26,14 +26,17 @@ public class GuessNumberTest {
         assertEquals("4A0B",result);
     }
 
-//    private class TestAnswerGenerator implements AnswerGenerator {
-//        private int[] answer;
-//        public TestAnswerGenerator(int[] answer) {
-//            this.answer = answer;
-//        }
-//        @Override
-//        public int[] generate() {
-//            return answer;
-//        }
-//    }
+    @Test
+    void should_return_0A4B_when_guess_given_answer_1234_and_input_guess_4321() {
+        //given
+        int[] answer = {1,2,3,4};
+        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        when(generateRandomNum.generateRandomNum()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(generateRandomNum);
+        int[] inputGuess = {4,3,2,1};
+        //when
+        String result = guessNumber.guess(inputGuess);
+        //then
+        assertEquals("0A0B",result);
+    }
 }

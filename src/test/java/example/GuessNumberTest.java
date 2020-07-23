@@ -113,4 +113,15 @@ public class GuessNumberTest {
         //then
         assertEquals(true,result);
     }
+
+    @Test
+    void should_return_false_when_isValid_given_answer_1222() {
+        //given
+        GuessNumber guessNumber = new GuessNumber();
+        int[] inputGuess = {1,2,2,2};
+        //when
+        boolean result = guessNumber.isValid(inputGuess);
+        //then
+        assertEquals(false,result);
+    }
 }

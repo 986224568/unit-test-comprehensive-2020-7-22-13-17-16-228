@@ -37,6 +37,6 @@ public class GuessNumberTest {
         //when
         String result = guessNumber.guess(inputGuess);
         //then
-        assertEquals("0A0B",result);
+        assertEquals("0A4B",result);
     }
 }

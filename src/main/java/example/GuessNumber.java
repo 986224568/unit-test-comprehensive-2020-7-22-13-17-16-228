@@ -10,14 +10,13 @@ public class GuessNumber {
     public String guess(int[] guessNum) {
         int A = 0;
         int B = 0;
-        for (int num : answer) {
-            for (int gNum : guessNum) {
-                if (num == gNum) {
-                    A++;
-                }
+        for (int i = 0; i < 4; i++) {
+            if (answer[i] == guessNum[i]) {
+                A++;
+            } else {
+                B++;
             }
         }
-        B = 4 - A;
         return String.format("%dA%dB", A, B);
     }
 

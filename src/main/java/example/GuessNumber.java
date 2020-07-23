@@ -27,6 +27,7 @@ public class GuessNumber {
         B = B - A;
         return String.format("%dA%dB", A, B);
 
+
     }
 
     public int[] generateRandom() {
@@ -34,6 +35,6 @@ public class GuessNumber {
     }
 
     public boolean isValid(int[] answer) {
-        return false;
+        return true;
     }
 }

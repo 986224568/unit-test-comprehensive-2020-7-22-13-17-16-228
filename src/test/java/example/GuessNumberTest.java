@@ -91,4 +91,18 @@ public class GuessNumberTest {
         //then
         assertEquals("0A1B",result);
     }
+
+    @Test
+    void should_return_false_when_isValid_given_answer_12345() {
+        //given
+        int[] answer = {1,2,3,4};
+        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        when(generateRandomNum.generateRandomNum()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(generateRandomNum);
+        int[] inputGuess = {1,2,3,4,5};
+        //when
+        boolean result = guessNumber.isValid(inputGuess);
+        //then
+        assertEquals(false,result);
+    }
 }

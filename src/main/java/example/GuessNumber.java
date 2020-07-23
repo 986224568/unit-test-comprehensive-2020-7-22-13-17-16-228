@@ -1,5 +1,7 @@
 package example;
 
+import java.util.HashSet;
+
 public class GuessNumber {
     private int[] answer;
 
@@ -10,13 +12,19 @@ public class GuessNumber {
     public String guess(int[] guessNum) {
         int A = 0;
         int B = 0;
+        HashSet<Integer> set = new HashSet<>();
         for (int i = 0; i < 4; i++) {
             if (answer[i] == guessNum[i]) {
                 A++;
-            } else {
+            }
+            set.add(guessNum[i]);
+        }
+        for (int num : answer) {
+            if (set.contains(num)) {
                 B++;
             }
         }
+        B = B - A;
         return String.format("%dA%dB", A, B);
     }
 

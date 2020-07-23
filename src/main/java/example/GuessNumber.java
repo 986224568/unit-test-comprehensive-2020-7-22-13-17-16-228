@@ -1,6 +1,8 @@
 package example;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Random;
 
 public class GuessNumber {
     private int[] answer;
@@ -30,8 +32,18 @@ public class GuessNumber {
 
     }
 
-    public int[] generateRandom() {
-        return new int[]{1, 2, 3, 4};
+    public void generateRandom() {
+        String charList = "0123456789";
+        StringBuilder generateNum = new StringBuilder();
+        Random random = new Random();
+        for(int i=0;i<charList.length();i++) {
+            generateNum .append(charList.charAt(Math.abs(random.nextInt())%charList.length()));
+        }
+        int[] nums = new int[4];
+        for (int i = 0; i < 4; i++) {
+            nums[i] = Integer.valueOf(generateNum.charAt(i));
+        }
+        this.answer = nums;
     }
 
     public boolean isValid(int[] answer) {

@@ -41,13 +41,13 @@ public class GuessNumberTest {
     }
 
     @Test
-    void should_return_2A2B_when_guess_given_answer_1234_and_input_guess_1289() {
+    void should_return_2A2B_when_guess_given_answer_1234_and_input_guess_1243() {
         //given
         int[] answer = {1,2,3,4};
         GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
-        int[] inputGuess = {1,2,8,9};
+        int[] inputGuess = {1,2,4,3};
         //when
         String result = guessNumber.guess(inputGuess);
         //then
@@ -65,6 +65,6 @@ public class GuessNumberTest {
         //when
         String result = guessNumber.guess(inputGuess);
         //then
-        assertEquals("2A2B",result);
+        assertEquals("0A0B",result);
     }
 }

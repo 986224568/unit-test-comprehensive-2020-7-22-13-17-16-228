@@ -35,7 +35,7 @@ public class GuessNumber {
     }
 
     public boolean isValid(int[] answer) {
-        if (answer == null || answer.length >= 4) {
+        if (answer == null || answer.length != 4) {
             return false;
         }
         return true;

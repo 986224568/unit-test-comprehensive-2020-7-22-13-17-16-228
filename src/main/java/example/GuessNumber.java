@@ -1,11 +1,8 @@
 package example;
 
-import java.net.Inet4Address;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
-import java.util.stream.Collectors;
+
 
 public class GuessNumber {
     private int[] answer;
@@ -21,7 +18,7 @@ public class GuessNumber {
 
         for (int indexOfAnswer = 0; indexOfAnswer < 4; indexOfAnswer++) {
             int answerNumber = answer[indexOfAnswer];
-            if (Arrays.stream(guessNum).anyMatch(i -> i==answerNumber)) {
+            if (Arrays.stream(guessNum).anyMatch(i -> i == answerNumber)) {
                 countOfCorrectPosition++;
             }
             if (answer[indexOfAnswer] == guessNum[indexOfAnswer]) {

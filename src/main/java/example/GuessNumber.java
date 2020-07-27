@@ -31,11 +31,6 @@ public class GuessNumber {
 
     }
 
-    public void generateRandom() {
-        this.generateRandomNum = new GenerateRandomNumBer();
-        this.answer = generateRandomNum.generateRandomNum();
-    }
-
     public boolean isValid(int[] answer) {
         if (answer == null || answer.length != 4) {
             return false;

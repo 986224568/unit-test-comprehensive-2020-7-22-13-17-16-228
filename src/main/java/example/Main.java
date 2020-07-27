@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        GuessNumber guessNumber = new GuessNumber();
-        guessNumber.generateRandom();
+        GenerateRandomNum generateRandomNum = new GenerateRandomNumBer();
+        GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         Scanner sc = new Scanner(System.in);
         int[] guessNum = new int[4];
         int times = 6;

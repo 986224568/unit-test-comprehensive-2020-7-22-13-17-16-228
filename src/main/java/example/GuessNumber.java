@@ -27,25 +27,31 @@ public class GuessNumber {
                 countOfCorrectNumber++;
             }
         }
-
+        System.out.println(String.format("%dA%dB", countOfCorrectNumber, countOfCorrectPosition-countOfCorrectNumber));
         return String.format("%dA%dB", countOfCorrectNumber, countOfCorrectPosition-countOfCorrectNumber);
 
 
     }
 
     public void generateRandom() {
-        String charList = "0123456789";
-        StringBuilder generateNum = new StringBuilder();
-        Random random = new Random();
-        for (int i = 0; i < charList.length(); i++) {
-            generateNum.append(charList.charAt(Math.abs(random.nextInt()) % charList.length()));
+        String number = "";
+        Random rd = new Random();
+        while (number.length() != 4) {
+            String rn = rd.nextInt(10) + "";
+            if (number.length()==1){
+                if ("0".equals(rn)){
+                    continue;
+                }
+            }
+            if (number.indexOf(rn) == -1){
+                number += rn;
+            }
         }
         int[] nums = new int[4];
         for (int i = 0; i < 4; i++) {
-            nums[i] = Integer.valueOf(generateNum.charAt(i));
+            nums[i] = Integer.parseInt(String.valueOf(number.charAt(i)));
         }
         this.answer = nums;
-//        this.answer = new int[]{1,2,3,4};
     }
 
     public boolean isValid(int[] answer) {

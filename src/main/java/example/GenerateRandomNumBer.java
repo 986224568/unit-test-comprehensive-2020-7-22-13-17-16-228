@@ -13,9 +13,13 @@ public class GenerateRandomNumBer implements GenerateRandomNum {
                 number += randomNum;
             }
         }
+        return changeStringToArrays(number);
+    }
+
+    private int[] changeStringToArrays(String str) {
         int[] nums = new int[4];
         for (int i = 0; i < 4; i++) {
-            nums[i] = Integer.parseInt(String.valueOf(number.charAt(i)));
+            nums[i] = Integer.parseInt(String.valueOf(str.charAt(i)));
         }
         return nums;
     }

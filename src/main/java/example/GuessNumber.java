@@ -13,20 +13,20 @@ public class GuessNumber {
     }
 
     public String guess(int[] guessNum) {
-        int countOfCorrectNumber = 0;
-        int countOfCorrectPosition = 0;
+        int countOfAllCorrect = 0;
+        int countOfCorrectNum = 0;
 
         for (int indexOfAnswer = 0; indexOfAnswer < 4; indexOfAnswer++) {
             int answerNumber = answer[indexOfAnswer];
             if (Arrays.stream(guessNum).anyMatch(i -> i == answerNumber)) {
-                countOfCorrectPosition++;
+                countOfCorrectNum++;
             }
             if (answer[indexOfAnswer] == guessNum[indexOfAnswer]) {
-                countOfCorrectNumber++;
+                countOfAllCorrect++;
             }
         }
-        System.out.println(String.format("%dA%dB", countOfCorrectNumber, countOfCorrectPosition-countOfCorrectNumber));
-        return String.format("%dA%dB", countOfCorrectNumber, countOfCorrectPosition-countOfCorrectNumber);
+        System.out.println(String.format("%dA%dB", countOfAllCorrect, countOfCorrectNum-countOfAllCorrect));
+        return String.format("%dA%dB", countOfAllCorrect, countOfCorrectNum-countOfAllCorrect);
 
 
     }

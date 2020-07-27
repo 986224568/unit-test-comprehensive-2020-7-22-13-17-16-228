@@ -1,8 +1,11 @@
 package example;
 
+import java.net.Inet4Address;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class GuessNumber {
     private int[] answer;
@@ -12,22 +15,20 @@ public class GuessNumber {
     }
 
     public String guess(int[] guessNum) {
-        int A = 0;
-        int B = 0;
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < 4; i++) {
-            if (answer[i] == guessNum[i]) {
-                A++;
+        int countOfCorrectNumber = 0;
+        int countOfCorrectPosition = 0;
+
+        for (int indexOfAnswer = 0; indexOfAnswer < 4; indexOfAnswer++) {
+            int answerNumber = answer[indexOfAnswer];
+            if (Arrays.stream(guessNum).anyMatch(i -> i==answerNumber)) {
+                countOfCorrectPosition++;
             }
-            set.add(guessNum[i]);
-        }
-        for (int num : answer) {
-            if (set.contains(num)) {
-                B++;
+            if (answer[indexOfAnswer] == guessNum[indexOfAnswer]) {
+                countOfCorrectNumber++;
             }
         }
-        B = B - A;
-        return String.format("%dA%dB", A, B);
+
+        return String.format("%dA%dB", countOfCorrectNumber, countOfCorrectPosition-countOfCorrectNumber);
 
 
     }
@@ -36,14 +37,15 @@ public class GuessNumber {
         String charList = "0123456789";
         StringBuilder generateNum = new StringBuilder();
         Random random = new Random();
-        for(int i=0;i<charList.length();i++) {
-            generateNum .append(charList.charAt(Math.abs(random.nextInt())%charList.length()));
+        for (int i = 0; i < charList.length(); i++) {
+            generateNum.append(charList.charAt(Math.abs(random.nextInt()) % charList.length()));
         }
         int[] nums = new int[4];
         for (int i = 0; i < 4; i++) {
             nums[i] = Integer.valueOf(generateNum.charAt(i));
         }
         this.answer = nums;
+//        this.answer = new int[]{1,2,3,4};
     }
 
     public boolean isValid(int[] answer) {

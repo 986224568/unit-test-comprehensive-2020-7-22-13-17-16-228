@@ -35,16 +35,20 @@ public class GuessNumber {
         if (answer == null || answer.length != 4) {
             return false;
         }
-        HashSet<Integer> set = new HashSet<>();
-        for (int num : answer) {
-            if (set.contains(num)) {
-                return false;
-            }
-            set.add(num);
-        }
-        return true;
+        return !isContainsRepeat(answer);
     }
 
     public GuessNumber() {
+    }
+
+    private boolean isContainsRepeat(int[] answer) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : answer) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
     }
 }

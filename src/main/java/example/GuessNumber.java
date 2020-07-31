@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 
 public class GuessNumber {
-    private int[] answer;
+    private Integer[] answer;
     private GenerateRandom generateRandomNum;
 
     public GuessNumber(GenerateRandom generateRandomNum) {

@@ -1,26 +1,28 @@
 package example;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 
 public class GenerateRandomNumber implements GenerateRandom {
     @Override
-    public int[] generateRandomNum() {
-        String number = "";
+    public Integer[] generateRandomNum() {
+        List<Integer> numList = new ArrayList<>();
+        int range = 10;
+        int randomNum;
         Random random = new Random();
-        while (number.length() != 4) {
-            String randomNum = random.nextInt(10) + "";
-            if (number.indexOf(randomNum) == -1){
-                number += randomNum;
+        while (numList.size() != 4) {
+            randomNum = random.nextInt(range);
+            if (!numList.contains(randomNum)) {
+                numList.add(randomNum);
             }
         }
-        return changeStringToArrays(number);
+        Integer[] returnNums = new Integer[numList.size()];
+        numList.toArray(returnNums);
+        return returnNums;
+
+        //String strings[]=(String [])list.toArray();
     }
 
-    private int[] changeStringToArrays(String str) {
-        int[] nums = new int[4];
-        for (int i = 0; i < 4; i++) {
-            nums[i] = Integer.parseInt(String.valueOf(str.charAt(i)));
-        }
-        return nums;
-    }
 }

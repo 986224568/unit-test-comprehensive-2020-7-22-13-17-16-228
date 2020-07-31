@@ -31,24 +31,7 @@ public class GuessNumber {
 
     }
 
-    public boolean isValid(int[] answerNums) {
-        if (answerNums == null || answerNums.length != 4) {
-            return false;
-        }
-        return !isContainsRepeat(answerNums);
-    }
-
     public GuessNumber() {
     }
 
-    private boolean isContainsRepeat(int[] answer) {
-        HashSet<Integer> set = new HashSet<>();
-        for (int num : answer) {
-            if (set.contains(num)) {
-                return true;
-            }
-            set.add(num);
-        }
-        return false;
-    }
 }

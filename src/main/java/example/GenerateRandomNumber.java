@@ -1,7 +1,6 @@
 package example;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
@@ -21,8 +20,6 @@ public class GenerateRandomNumber implements GenerateRandom {
         Integer[] returnNums = new Integer[numList.size()];
         numList.toArray(returnNums);
         return returnNums;
-
-        //String strings[]=(String [])list.toArray();
     }
 
 }

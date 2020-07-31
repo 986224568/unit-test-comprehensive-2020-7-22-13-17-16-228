@@ -26,7 +26,7 @@ public class Main {
 
     private static void guessNumGame(int[] guessNum, GuessNumber guessNumber) {
         if(Validation.isValid(guessNum)){
-            guessNumber.guess(guessNum);
+            System.out.println(guessNumber.guess(guessNum));
         }else{
             System.out.println("Wrong Input，Input again");
         }

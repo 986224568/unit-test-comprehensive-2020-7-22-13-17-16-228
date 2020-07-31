@@ -31,11 +31,11 @@ public class GuessNumber {
 
     }
 
-    public boolean isValid(int[] answer) {
-        if (answer == null || answer.length != 4) {
+    public boolean isValid(int[] answerNums) {
+        if (answerNums == null || answerNums.length != 4) {
             return false;
         }
-        return !isContainsRepeat(answer);
+        return !isContainsRepeat(answerNums);
     }
 
     public GuessNumber() {

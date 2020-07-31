@@ -12,7 +12,7 @@ public class GuessNumberTest {
     void should_return_4A0B_when_guess_given_answer_1234_and_input_guess_1234() {
         //given
         int[] answer = {1,2,3,4};
-        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        GenerateRandom generateRandomNum = Mockito.mock(GenerateRandom.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] inputGuess = {1,2,3,4};
@@ -26,7 +26,7 @@ public class GuessNumberTest {
     void should_return_0A4B_when_guess_given_answer_1234_and_input_guess_4321() {
         //given
         int[] answer = {1,2,3,4};
-        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        GenerateRandom generateRandomNum = Mockito.mock(GenerateRandom.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] inputGuess = {4,3,2,1};
@@ -40,7 +40,7 @@ public class GuessNumberTest {
     void should_return_2A2B_when_guess_given_answer_1234_and_input_guess_1243() {
         //given
         int[] answer = {1,2,3,4};
-        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        GenerateRandom generateRandomNum = Mockito.mock(GenerateRandom.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] inputGuess = {1,2,4,3};
@@ -54,7 +54,7 @@ public class GuessNumberTest {
     void should_return_0A0B_when_guess_given_answer_1234_and_input_guess_5678() {
         //given
         int[] answer = {1,2,3,4};
-        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        GenerateRandom generateRandomNum = Mockito.mock(GenerateRandom.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] inputGuess = {5,6,7,8};
@@ -68,7 +68,7 @@ public class GuessNumberTest {
     void should_return_1A1B_when_guess_given_answer_1234_and_input_guess_1628() {
         //given
         int[] answer = {1,2,3,4};
-        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        GenerateRandom generateRandomNum = Mockito.mock(GenerateRandom.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] inputGuess = {1,6,2,8};
@@ -82,7 +82,7 @@ public class GuessNumberTest {
     void should_return_0A1B_when_guess_given_answer_1234_and_input_guess_5628() {
         //given
         int[] answer = {1,2,3,4};
-        GenerateRandomNum generateRandomNum = Mockito.mock(GenerateRandomNum.class);
+        GenerateRandom generateRandomNum = Mockito.mock(GenerateRandom.class);
         when(generateRandomNum.generateRandomNum()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] inputGuess = {5,6,2,8};

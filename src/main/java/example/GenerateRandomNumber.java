@@ -2,7 +2,7 @@ package example;
 
 import java.util.Random;
 
-public class GenerateRandomNumBer implements GenerateRandomNum {
+public class GenerateRandomNumber implements GenerateRandom {
     @Override
     public int[] generateRandomNum() {
         String number = "";

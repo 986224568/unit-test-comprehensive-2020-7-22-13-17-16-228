@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        GenerateRandom generateRandomNum = new GenerateRandomNumber();
+        GuessNumber guessNumber = new GuessNumber(generateRandomNum);
         int[] guessNum = null;
         int times = 6;
         while (times > 0){
             guessNum = inputGuessNum();
-            guessNumGame(guessNum);
+            guessNumGame(guessNum, guessNumber);
             times--;
         }
     }
@@ -22,9 +24,7 @@ public class Main {
         return guessNum;
     }
 
-    private static void guessNumGame(int[] guessNum) {
-        GenerateRandomNum generateRandomNum = new GenerateRandomNumBer();
-        GuessNumber guessNumber = new GuessNumber(generateRandomNum);
+    private static void guessNumGame(int[] guessNum, GuessNumber guessNumber) {
         if(guessNumber.isValid(guessNum)){
             guessNumber.guess(guessNum);
         }else{

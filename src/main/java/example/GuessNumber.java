@@ -6,9 +6,9 @@ import java.util.HashSet;
 
 public class GuessNumber {
     private int[] answer;
-    private GenerateRandomNum generateRandomNum;
+    private GenerateRandom generateRandomNum;
 
-    public GuessNumber(GenerateRandomNum generateRandomNum) {
+    public GuessNumber(GenerateRandom generateRandomNum) {
         this.answer = generateRandomNum.generateRandomNum();
     }
 
